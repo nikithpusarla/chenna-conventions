@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import BookingForm from "@/components/BookingForm";
 import PublicCalendar from "@/components/PublicCalendar";
 import Link from "next/link";
+import { Booking } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +56,7 @@ export default async function Home() {
             <h2 className="text-3xl font-bold tracking-tight">Check Availability</h2>
             <p className="mt-2 text-zinc-600 dark:text-zinc-400">View our open dates to plan your event.</p>
           </div>
-          <PublicCalendar bookings={approvedBookings as any} />
+          <PublicCalendar bookings={approvedBookings as unknown as Booking[]} />
         </section>
 
         {/* Booking Form Section */}

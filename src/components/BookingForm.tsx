@@ -20,7 +20,7 @@ function SubmitButton() {
 
 export default function BookingForm() {
   const [state, formAction] = useActionState(
-    async (prevState: any, formData: FormData) => {
+    async (prevState: unknown, formData: FormData) => {
       return await submitBooking(formData);
     },
     null
