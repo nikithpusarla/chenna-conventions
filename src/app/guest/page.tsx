@@ -3,6 +3,8 @@ import BookingForm from "@/components/BookingForm";
 import PublicCalendar from "@/components/PublicCalendar";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const approvedBookings = await prisma.booking.findMany({
     where: { status: "APPROVED" },

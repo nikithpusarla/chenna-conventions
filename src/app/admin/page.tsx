@@ -3,6 +3,8 @@ import AdminCalendar from "@/components/AdminCalendar";
 import AdminBookingForm from "@/components/AdminBookingForm";
 import AdminBookingRow from "@/components/AdminBookingRow";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const bookings = await prisma.booking.findMany({
     orderBy: { createdAt: "desc" },
